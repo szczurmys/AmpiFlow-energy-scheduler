@@ -4,12 +4,14 @@ import {
     Tabs,
     Card,
     Button,
-//    Calendar,
     TextArea
 } from "@radix-ui/themes";
+import Calendar from 'react-calendar'
 
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { FaCar, FaUtensils } from "react-icons/fa";
+import './App.css'
+import 'react-calendar/dist/Calendar.css'
 
 const energyData = [
   { name: "Mon", usage: 30 },
@@ -31,8 +33,10 @@ export default function EnergySchedulerApp() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">
-        <img src="/public/logo.png" alt="logo" />
-      <h1 className="text-3xl font-bold mb-6 text-center">AI Energy Scheduler</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">
+          <img className="logo" src="/public/logo.png" alt="logo" />
+          AI Energy Scheduler
+      </h1>
       <Tabs.Root defaultValue="scheduler" className="w-full max-w-5xl mx-auto">
         <Tabs.List className="grid w-full grid-cols-2 mb-6">
           <Tabs.Trigger value="scheduler">🧠 AI Scheduler</Tabs.Trigger>
@@ -46,7 +50,7 @@ export default function EnergySchedulerApp() {
 {/*             <Card> */}
 {/*               <Card.Content className="p-4"> */}
                 <h2 className="text-xl font-semibold mb-4">Schedule Overview</h2>
-{/*                 <Calendar selected={selectedDate} onSelect={setSelectedDate} /> */}
+                <Calendar value={selectedDate} onChange={setSelectedDate} />
 
                 <div className="mt-6">
                   <h3 className="text-lg font-medium mb-2">Schedule for {selectedDate.toDateString()}:</h3>
