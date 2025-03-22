@@ -35,8 +35,9 @@ export default function EnergySchedulerApp() {
     <div className="min-h-screen bg-gray-50 p-4">
       <h1 className="text-3xl font-bold mb-6 text-center">
           <img className="logo" src="/public/logo.png" alt="logo" />
-          AI Energy Scheduler
+          Smart Energy. Maximum Flow.
       </h1>
+      <h2 className="text-3xl font-bold mb-6 text-center">AI Energy Scheduler</h2>
       <Tabs.Root defaultValue="scheduler" className="w-full max-w-5xl mx-auto">
         <Tabs.List className="grid w-full grid-cols-2 mb-6">
           <Tabs.Trigger value="scheduler">🧠 AI Scheduler</Tabs.Trigger>
